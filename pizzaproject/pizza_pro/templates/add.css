@@ -1,0 +1,10 @@
+/* Basic styling for responsiveness */
+.product {
+    width: 50%;
+    float: left;
+}
+
+.cart {
+    width: 50%;
+    float: left;
+}

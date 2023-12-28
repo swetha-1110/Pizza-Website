@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="add.css">
+    
+</head>
+<body>
+    <div class="product">
+        <h2>margherita suzhi pizza</h2>
+        <p>Product description goes here.</p>
+        <p>Price: $10.00</p>
+        <button class="add-to-cart-button" onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+            <div class="in-box">
+           
+                <img src="{% static 'images/veg.png' %}" alt="img" class="veg-icon">
+                <img src="{% static 'images/lord1.png' %}" alt="">
+                <div class="in-content">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <h2>Margherita Sushi Pizza</h2>
+                      <a href="#" data-name="Margherita suzhi pizza" data-price="20" class="add-to-cart ">Add to cart</a>
+                       
+                </div>
+                      
+        
+                </div>
+            </div>
+        -->
+        </ul>
+    </div>
+    <script>
+        // Cart to store items
+const cart = [];
+
+// Function to add an item to the cart
+function addToCart() {
+    const product = {
+        name: "Product Name",
+        price: 10.00,
+    };
+
+    cart.push(product);
+
+    // Update the cart display
+    updateCartDisplay();
+}
+
+// Function to update the cart display
+function updateCartDisplay() {
+    const cartItems = document.getElementById("cart-items");
+    cartItems.innerHTML = "";
+
+    for (const item of cart) {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        cartItems.appendChild(listItem);
+    }
+}
+</script>
+
+    <script src="script.js"></script>
+</body>
+</html>
